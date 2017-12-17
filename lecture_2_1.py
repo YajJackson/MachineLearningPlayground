@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
-# Linear regression with on variable
+# -------------------------------------------------------
+# Linear regression with one variable
 
 # m = Number of training examples
 # x = 'input' variable/ features
@@ -16,20 +16,34 @@ import matplotlib.pyplot as plt
 
 # Training set of housing prices
 # Size in Feet^2 (x) | Price ($) in 1000's (y)
+# -------------------------------------------------------
 
-# plt.plot(set[0], set[1], 'ro')
-# plt.show()
+import matplotlib.pyplot as plt
+import numpy as np
+
 set = [
   [2104, 1416, 1534, 852],
   [460, 232, 315, 178]
 ]
 
-t1 = 0
-t2 = 0
-iterations = 1000
+h = lambda x, m: m*x
 
-def h(x):
-  return t1 + t2*x
+cost = lambda s, m: sum(map(lambda x, y: (h(x, m) - y) **2, s[0], s[1])) / (2*len(s[0]))
 
-def cost(p1, p2):
-  return .5()
+num = 100
+t = 1
+i = .1
+d = t + i
+
+for n in range(num):
+  if cost(set, t) > cost(set, d):
+    t = d
+    d += i
+  else:
+    d -= i
+
+print(f'Coeficient: {t} \nCost: {cost(set, t)}')
+
+r = np.arange(0, 3000, 1)
+plt.plot(r, h(r, t), 'r--', set[0], set[1], 'bo')
+plt.show()
