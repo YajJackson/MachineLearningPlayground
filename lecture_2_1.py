@@ -17,12 +17,19 @@ import matplotlib.pyplot as plt
 # Training set of housing prices
 # Size in Feet^2 (x) | Price ($) in 1000's (y)
 
-
+# plt.plot(set[0], set[1], 'ro')
+# plt.show()
 set = [
   [2104, 1416, 1534, 852],
   [460, 232, 315, 178]
 ]
 
-plt.plot(set[0], set[1], 'ro')
-plt.show()
+t1 = 0
+t2 = 0
+iterations = 1000
 
+def h(x):
+  return t1 + t2*x
+
+def cost(p1, p2):
+  return .5()
